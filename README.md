@@ -1,4 +1,4 @@
-# Deno Is
+# deno-is
 
 [![Build Status](https://travis-ci.com/justjavac/deno-is.svg?branch=master)](https://travis-ci.com/justjavac/deno-is)
 
@@ -39,7 +39,7 @@ _alphabetical order_:
 | `isRunning`| Whether the process(pid) is running                                                    |
 | `isWsl`    | Whether the process is running inside [Windows Subsystem for Linux][1]                 |
 
-[1]: https://msdn.microsoft.com/commandline/wsl/about)
+[1]: https://msdn.microsoft.com/commandline/wsl/about
 
 ### Credits
 
