@@ -5,7 +5,7 @@ import { readFileStrSync } from "https://deno.land/std/fs/mod.ts";
 /**
  * Return `true` if the process is running inside [Windows Subsystem for Linux][1](Bash on Windows).
  *
- * [1]: https://msdn.microsoft.com/commandline/wsl/about)
+ * [1]: https://msdn.microsoft.com/commandline/wsl/about
  * 
  * Requires the `--allow-read` flag.
  */
