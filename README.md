@@ -43,6 +43,7 @@ _alphabetical order_:
 | `isDocker`/`isDockerSync`   | Whether the process is running inside Docker                                           |
 | `isGzip`/`isGzipSync`       | Whether a `Uint8Array` is a gzip file                                                  |
 | `isRunning`/`isRunningSync` | Whether the process(pid) is running                                                    |
+| `isSSH`/`isSSHSync`         | Whether the process is running inside SSH                                              |
 | `isWsl`/`isWslSync`         | Whether the process is running inside [Windows Subsystem for Linux][1]                 |
 
 [1]: https://msdn.microsoft.com/commandline/wsl/about
