@@ -7,23 +7,29 @@
 ## Usage
 
 ```ts
-import { isCI, isWsl } from "https://deno.land/x/is/mod.ts";
+import { isRunning, isRunningSync, isCI, isCISync } from "https://deno.land/x/is/mod.ts";
 
-isCI();
+isCISync();
 // => false
-isWsl();
+isRunningSync(Deno.pid);
+// => true
+
+await isCI();
 // => false
+await isRunning(Deno.pid);
+// => true
+
 ```
 
 or
 
 ```ts
-import isCI from "https://deno.land/x/is/ci.ts";
-isCI();
+import { isCI, isCISync } from "https://deno.land/x/is/ci.ts";
+
+isCISync();
 // => false
 
-import isWsl from "https://deno.land/x/is/wsl.ts";
-isWsl();
+await isCI();
 // => false
 ```
 
@@ -31,13 +37,13 @@ isWsl();
 
 _alphabetical order_:
 
-| Methods    | Description                                                                            |
-|------------|----------------------------------------------------------------------------------------|
-| `isCI`     | Whether the process is running on the CI server                                        |
-| `isDocker` | Whether the process is running inside Docker                                           |
-| `isGzip`   | Whether a `Uint8Array` is a gzip file                                                  |
-| `isRunning`| Whether the process(pid) is running                                                    |
-| `isWsl`    | Whether the process is running inside [Windows Subsystem for Linux][1]                 |
+| Methods                     | Description                                                                            |
+|-----------------------------|----------------------------------------------------------------------------------------|
+| `isCI`/`isCISync`           | Whether the process is running on the CI server                                        |
+| `isDocker`/`isDockerSync`   | Whether the process is running inside Docker                                           |
+| `isGzip`/`isGzipSync`       | Whether a `Uint8Array` is a gzip file                                                  |
+| `isRunning`/`isRunningSync` | Whether the process(pid) is running                                                    |
+| `isWsl`/`isWslSync`         | Whether the process is running inside [Windows Subsystem for Linux][1]                 |
 
 [1]: https://msdn.microsoft.com/commandline/wsl/about
 
