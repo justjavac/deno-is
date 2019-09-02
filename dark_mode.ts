@@ -16,7 +16,7 @@ export async function isDarkMode(): Promise<boolean> {
         stderr: "null"
       });
       const output: string = decode(await process.output());
-      process.kill(Deno.Signal.SIGKILL);
+      process.close();
       return output.includes("Dark");
     } catch {
       return false;
