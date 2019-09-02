@@ -1,8 +1,17 @@
-import { readFileStrSync } from "https://deno.land/std/fs/mod.ts";
+import { readFileStr, readFileStrSync } from "https://deno.land/std/fs/mod.ts";
 
 // see: https://github.com/sindresorhus/is-docker
 
-function hasDockerEnv(): boolean {
+async function hasDockerEnv(): Promise<boolean> {
+  try {
+    await Deno.stat("/.dockerenv");
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function hasDockerEnvSync(): boolean {
   try {
     Deno.statSync("/.dockerenv");
     return true;
@@ -11,7 +20,15 @@ function hasDockerEnv(): boolean {
   }
 }
 
-function hasDockerCGroup(): boolean {
+async function hasDockerCGroup(): Promise<boolean> {
+  try {
+    return (await readFileStr("/proc/self/cgroup")).includes("docker");
+  } catch {
+    return false;
+  }
+}
+
+function hasDockerCGroupSync(): boolean {
   try {
     return readFileStrSync("/proc/self/cgroup").includes("docker");
   } catch {
@@ -21,9 +38,18 @@ function hasDockerCGroup(): boolean {
 
 /**
  * Return `true` if the process is running inside a Docker container.
- * 
+ *
  * Requires the `--allow-read` flag.
  */
-export default function isDocker(): boolean {
-  return hasDockerEnv() || hasDockerCGroup();
+export async function isDocker(): Promise<boolean> {
+  return await hasDockerEnv() || await hasDockerCGroup();
+}
+
+/**
+ * Return `true` if the process is running inside a Docker container synchronously.
+ *
+ * Requires the `--allow-read` flag.
+ */
+export function isDockerSync(): boolean {
+  return hasDockerEnvSync() || hasDockerCGroupSync();
 }

@@ -1,9 +1,13 @@
 import { runTests, test, assertEquals, assert } from "./deps.ts";
 
-import isCI from "../ci.ts";
+import { isCI, isCISync } from "../ci.ts";
 
-test(function isTravisCI(): void {
-  assert(isCI());
+test(function isTravisCISync(): void {
+  assert(isCISync());
+});
+
+test(async function isTravisCI(): Promise<void> {
+  assert(await isCI());
 });
 
 runTests();
