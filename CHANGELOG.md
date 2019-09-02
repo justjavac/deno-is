@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.2 - [2019-09-02]
+
+- add `isSSH`/`isSSHSync` [#2](https://github.com/justjavac/deno-is/pull/2)
+
 ## 0.2.1 - [2019-09-02]
 
 - update readme
