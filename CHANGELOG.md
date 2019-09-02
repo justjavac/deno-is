@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1 - [2019-09-02]
+
+- update readme
+
 ## 0.2.0 - [2019-09-02]
 
 - add async and sync mode
