@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.0 - [2019-09-10]
+
+- remove `Deno.platform` usage [#3](https://github.com/justjavac/deno-is/pull/3)
+
 ## 0.2.2 - [2019-09-02]
 
 - add `isSSH`/`isSSHSync` [#2](https://github.com/justjavac/deno-is/pull/2)
