@@ -10,7 +10,7 @@ import { readFileStr, readFileStrSync } from "https://deno.land/std/fs/mod.ts";
  * Requires the `--allow-read` flag.
  */
 export async function isWsl(): Promise< boolean> {
-  if (Deno.platform.os !== "linux") {
+  if (Deno.build.os !== "linux") {
     return false;
   }
 
@@ -30,7 +30,7 @@ export async function isWsl(): Promise< boolean> {
  * Requires the `--allow-read` flag.
  */
 export function isWslSync(): boolean {
-  if (Deno.platform.os !== "linux") {
+  if (Deno.build.os !== "linux") {
     return false;
   }
 
