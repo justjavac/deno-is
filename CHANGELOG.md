@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.0 - [2020-04-11]
+
+- bump deno@0.40.0
+
 ## 0.3.0 - [2019-09-10]
 
 - remove `Deno.platform` usage [#3](https://github.com/justjavac/deno-is/pull/3)
