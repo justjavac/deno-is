@@ -22,11 +22,11 @@ jobs:
         with:
           deno-version: 0.x
 
-      - name: Cache Deno Generated Files
-        uses: actions/cache@v1
-        with:
-          path: ~/.cache/deno
-          key: ${{ runner.os }}-deno-cache-${{ hashFiles('**/mod.ts') }}
+      # - name: Cache Deno Generated Files
+      #   uses: actions/cache@v1
+      #   with:
+      #     path: ~/.cache/deno
+      #     key: ${{ runner.os }}-deno-cache-${{ hashFiles('**/mod.ts') }}
 
       - name: Format
         run: deno fmt --check
