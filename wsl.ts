@@ -9,7 +9,7 @@ import { readFileStr, readFileStrSync } from "https://deno.land/std/fs/mod.ts";
  * 
  * Requires the `--allow-read` flag.
  */
-export async function isWsl(): Promise< boolean> {
+export async function isWsl(): Promise<boolean> {
   if (Deno.build.os !== "linux") {
     return false;
   }

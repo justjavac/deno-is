@@ -1,17 +1,17 @@
-import { test, assert } from "./deps.ts";
+import { assert } from "./deps.ts";
 
-import {isWsl, isWslSync} from "../wsl.ts";
+import { isWsl, isWslSync } from "../wsl.ts";
 
-test({
+Deno.test({
   name: "not inside WSL synchronously",
   fn(): void {
     assert(!isWslSync());
-  }
+  },
 });
 
-test({
+Deno.test({
   name: "not inside WSL",
   async fn(): Promise<void> {
     assert(!await isWsl());
-  }
+  },
 });
