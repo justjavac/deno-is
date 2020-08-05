@@ -1,5 +1,3 @@
-import { readFileStr, readFileStrSync } from "https://deno.land/std/fs/mod.ts";
-
 // see: https://github.com/sindresorhus/is-wsl
 
 /**
@@ -15,7 +13,9 @@ export async function isWsl(): Promise<boolean> {
   }
 
   try {
-    const fullversion: string = await readFileStr("/proc/version");
+    const decoder = new TextDecoder("utf-8");
+    const data = await Deno.readFile("/proc/version");
+    const fullversion: string = decoder.decode(data);
     return fullversion.toLowerCase().includes("microsoft");
   } catch {
     return false;
@@ -35,7 +35,9 @@ export function isWslSync(): boolean {
   }
 
   try {
-    const fullversion: string = readFileStrSync("/proc/version");
+    const decoder = new TextDecoder("utf-8");
+    const data = Deno.readFileSync("/proc/version");
+    const fullversion: string = decoder.decode(data);
     return fullversion.toLowerCase().includes("microsoft");
   } catch {
     return false;

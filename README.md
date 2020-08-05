@@ -1,6 +1,9 @@
 # deno-is
 
-[![Build Status](https://travis-ci.com/justjavac/deno-is.svg?branch=master)](https://travis-ci.com/justjavac/deno-is)
+[![tag](https://img.shields.io/github/release/justjavac/deno-is)](https://github.com/justjavac/deno-is/releases)
+[![Build Status](https://github.com/justjavac/deno-is/workflows/ci/badge.svg?branch=master)](https://github.com/justjavac/deno-is/actions)
+[![license](https://img.shields.io/github/license/justjavac/deno-is)](https://github.com/justjavac/deno-is/blob/master/LICENSE)
+[![](https://img.shields.io/badge/deno-v1.2-green.svg)](https://github.com/denoland/deno)
 
 > Detect the running environment and context of the current script.
 
