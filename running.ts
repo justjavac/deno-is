@@ -4,6 +4,7 @@
  * Return `true` if the given PID is running.
  *
  * Requires the `--allow-run` flag.
+ * Requires the `--unstable` flag.
  */
 export async function isRunning(pid: number): Promise<boolean> {
   try {
@@ -20,6 +21,7 @@ export async function isRunning(pid: number): Promise<boolean> {
  * Return `true` if the given PID is running synchronously.
  *
  * Requires the `--allow-run` flag.
+ * Requires the `--unstable` flag.
  */
 export function isRunningSync(pid: number): boolean {
   try {
