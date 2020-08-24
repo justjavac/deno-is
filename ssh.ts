@@ -1,7 +1,5 @@
-import { hasOwnProperty } from "./util.ts";
-
 function hasSSHClient(): boolean {
-  return hasOwnProperty(Deno.env(), "SSH_CLIENT");
+  return Deno.env.get("SSH_CLIENT") != null;
 }
 
 /**
